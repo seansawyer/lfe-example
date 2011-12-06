@@ -1,6 +1,8 @@
 (defmodule lfe_example_server
+  ;; API
   (export (fib 1)
           (start_link 0))
+  ;; Callbacks
   (export (code_change 3)
           (handle_call 3)
           (handle_cast 2)

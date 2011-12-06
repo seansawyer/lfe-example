@@ -1,5 +1,7 @@
 (defmodule lfe_example_sup
+  ;; API
   (export (start_link 0))
+  ;; Callbacks
   (export (init 1))
   (behaviour 'supervisor))
 
@@ -15,5 +17,7 @@
 
 (defun init (args)
   #(ok
-    #( #(one_for_one 5 10)
-       [#(lfe_example_server #(lfe_example_server start_link []) permanent 5000 worker [lfe_example_server])] ) ))
+    #(#(one_for_one 5 10)
+      [#(lfe_example_server
+         #(lfe_example_server start_link [])
+         permanent 5000 worker [lfe_example_server])])))
